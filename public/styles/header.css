@@ -1,15 +1,18 @@
 header {
+  
   display:flex;
   flex-direction:column;
-  height:max-content;
+  height:400px;
   width:inherit;
   justify-content:center;
   align-items:center;
-  background-color: #3e3b69;
   background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+  background-color: #3a3461;
   z-index:0;
 }
-.h2 {
+.name {
+  color:rgb(228, 245, 136);
+  display:flex;
   justify-content:center;
   align-content:center;
 }
