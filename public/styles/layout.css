@@ -15,8 +15,9 @@ html {
  */
 
 body {
+  display:flex;
+  flex-direction:column;
   color: #545149;
-  text-align: center;
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Bungee', sans-serif;
@@ -25,7 +26,17 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+tweet-container {
+  display:flex;
+  align-content: center;
+}
+/* .p {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  font-family:Arial, Helvetica, sans-serif;
 
+} */
 
 /* Style the links inside the navigation bar */
 
