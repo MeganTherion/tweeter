@@ -11,8 +11,11 @@ nav {
 }
 
 .a {
+  display:flex;
+  align-self:left;
   font-size: 40px;
   color: #f4f1ec;
+
   
 }
 
@@ -24,7 +27,7 @@ nav {
   font-family: Arial, Helvetica, sans-serif;
   font-size:smaller;
   width:auto;
-  align-self:center;
+  align-self: right;
 
   
   /* background-color:#f4f1ec; */
@@ -33,4 +36,5 @@ nav {
   display:flex;
   flex-direction: column;
   align-self: center;
+  color:tomato;
 }
