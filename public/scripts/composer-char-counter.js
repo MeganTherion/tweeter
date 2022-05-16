@@ -9,24 +9,21 @@ let counterVal = counter.val();
 //declare callback function for handling typing event
 
 const handleTyping = function(event) {
-  console.log(event);
-  console.log(event.target);
-  console.log(event.target.value);
-  // counter.html(function(i, val) {
-  //    if (event.keyCode == 8) {
-  //      console.log("backspace");
-  //    }
-  //   return val+1;
-  //   } else {
-  //     return val-1;
-  //   }
-  // })
+  let numOfChars = (tweetText.val().length);
+  let tweetBase = 140;
+  counter.html(function(i, val) {
+    
+      val = tweetBase-numOfChars;
+      if (val < 0) counter.css('color', 'red');
+      return val 
+    
+  })
 
 }
 
 
 //add event handler to own element
-tweetText.input(handleTyping);
+tweetText.keydown(handleTyping);
 });
 
 // tweetText.addEventListener('keypress', function(event) {
