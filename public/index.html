@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
 
   <!-- External CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,14 +19,17 @@
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
-  
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script defer type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  <!-- <script type="text/javascript" src="/server/lib/util/user-helper.js"></script> -->
+
 </head>
 
 <body>
@@ -32,43 +38,69 @@
     <span class="box a">tweeter</span>
     <!-- <span class="container"> -->
     <span class="box b">write a new Tweet
-    <i class="fa-solid fa-angles-down"></i>
+      <i class="fa-solid fa-angles-down"></i>
     </span>
-    </nav>
-<header>
-  <div>
-    <img src="/images/profile-hex.png">
-  </div>
-  <br>
-  <div class="name">
-    <h2>Your Name</h2>
-  </div>
-</header>
+  </nav>
+  <header class="main-header">
+    <div>
+      <img src="/images/profile-hex.png">
+    </div>
+    <br>
+    <div class="name">
+      <h2>Your Name</h2>
+    </div>
+  </header>
   <!-- Page-specific (main) content here -->
-  <main class="tweet-container">
+  <main class="main-container">
     <!-- <section class="new-tweet"> -->
-      <!-- <h2>Compose Tweet</h2> -->
-        <form class="form" action="/tweets" method="POST">
-        <label for="tweet-text">What are you humming about?</label>
-        
-        <textarea name="text" id="tweet-text">hello, world</textarea>
-      
-      
-        <div class ="bottom-stuff"> 
-          <button id="tweetbutton" type="submit">Tweet</button>
-        
+    <!-- <h2>Compose Tweet</h2> -->
+    <form class="form" action="/tweets" method="POST">
+
+      <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+
+
+      <div class="bottom-stuff">
+        <button id="tweetbutton" type="submit">Tweet</button>
+
         <!-- <div id="counter"> -->
-          <output id="counter" name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
+        <output id="counter" name="counter" class="counter" for="tweet-text">140</output>
+      </div>
+    </form>
     <!-- </section> -->
-  <!-- <main class="container"> -->
-  <!-- <p class="p">Look again at that dot. That's here. That's home. That's us. On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives. The aggregate of our joy and suffering, thousands of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward, every creator and destroyer of civilization, every king and peasant, every young couple in love, every mother and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every "superstar," every "supreme leader," every saint and sinner in the history of our species lived there--on a mote of dust suspended in a sunbeam.
+    <!-- <main class="container"> -->
+    <!-- <p class="p">Look again at that dot. That's here. That's home. That's us. On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives. The aggregate of our joy and suffering, thousands of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward, every creator and destroyer of civilization, every king and peasant, every young couple in love, every mother and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every "superstar," every "supreme leader," every saint and sinner in the history of our species lived there--on a mote of dust suspended in a sunbeam.
 
 
     The Earth is a very small stage in a vast cosmic arena. Think of the rivers of blood spilled by all those generals and emperors so that, in glory and triumph, they could become the momentary masters of a fraction of a dot. Think of the endless cruelties visited by the inhabitants of one corner of this pixel on the scarcely distinguishable inhabitants of some other corner, how frequent their misunderstandings, how eager they are to kill one another, how fervent their hatreds.
   </p> -->
-</main>
+
+
+    <article class="tweets-container">
+      <header class="tweets-header">
+        <div class="user-name">
+        <img class="userpic" src="https://i.imgur.com/73hZDYK.png"></img>
+        <span>Newton</span>
+      </div>
+        <div class="user-handle">@sirIsaac</div>
+      </header>
+      <div class="tweets-body">
+        If I have seen further, it is by standing on the shoulders of giants.
+      </div>
+      <footer class="tweets-footer">
+        <span class="tweet-date">
+          <time datetime="2015-05-16 19:00">10 days ago</time>
+        </span>
+        <div class ="icons">
+          <i class="fa-solid fa-retweet"></i>
+          <i class="fa-solid fa-flag"></i>
+          <i class="fa-solid fa-heart"></i>
+        </div>
+          
+        
+        
+      </footer>
+    </article>
+  </main>
 </body>
 
 </html>
