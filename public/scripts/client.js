@@ -16,7 +16,13 @@ const loadTweets = function() {
 //handle submissions
 const tweetform = $('.form')
 const handleSubmit = function(event) {
-  const tweetVal = $('#tweet-text').val()
+  const tweetVal = $('#tweet-text').val();
+  if (!tweetVal) {
+    alert("You gotta type to tweet")
+  }
+  if (tweetVal.length > 140) {
+    alert("You tweeted too much")
+  }
   event.preventDefault();
   $.post('/tweets', tweetform.serialize());
   //console.log(tweetform.serialize());
