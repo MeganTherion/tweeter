@@ -4,32 +4,25 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
  
+//fetch tweets from /tweets
+const loadTweets = function() {
+  $.ajax('/tweets/', { method: 'GET' }) //make ajax get request to /tweets
+  .then(data => {
+    renderTweets(data);
+  })
+  
+}
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
+//handle submissions
+const tweetform = $('.form')
+const handleSubmit = function(event) {
+  const tweetVal = $('#tweet-text').val()
+  event.preventDefault();
+  $.post('/tweets', tweetform.serialize());
+  //console.log(tweetform.serialize());
+}
 
+//create tweets
 const createTweetElement = function(data) {
   const username = data.user.name;
   const avatar = data.user.avatars;
@@ -50,7 +43,7 @@ const createTweetElement = function(data) {
         ${tweetBody}
       </div>
       <footer class="tweets-footer">
-        <span id="tweet-date">${tweetDate}</span>
+        <span id="tweet-date">${timeago.format(tweetDate)}</span>
         
         <div class ="icons">
           <i class="fa-solid fa-retweet"></i>
@@ -62,17 +55,17 @@ const createTweetElement = function(data) {
     return $tweet;
     
 };
-
+//render a new tweet
 const renderTweets = function(tweets) {
   for (let tweet of tweets) {
     let newTweetElement = createTweetElement(tweet);
     $('#tweets-container').append(newTweetElement);
   }
 }
-// const $tweet = $(`<article class="tweet">Hello world<article>`);
+
 $(document).ready(function() {
-  renderTweets(data);
-  
+  loadTweets();
+  tweetform.submit(handleSubmit);
   console.log('Hello from console! 👋');
  
  });
