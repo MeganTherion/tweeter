@@ -1,5 +1,5 @@
 nav {
-  position:static;
+  position:fixed;
   display: flex;
   flex-direction:row;
   justify-content:space-between;
@@ -8,6 +8,8 @@ nav {
   background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
   background-color: #4056A1; 
   z-index:100;
+  top:0;
+  width:100%;
 
 }
 
@@ -17,6 +19,7 @@ nav {
   font-size: 40px;
   color: #f4f1ec;
   padding: 1.5em;
+  
 
 
   

@@ -1,5 +1,5 @@
 
-article.tweets-container {
+article.tweet {
  display:flex;
  flex-direction: column;
  padding:.5em;
@@ -10,7 +10,7 @@ article.tweets-container {
  
 }
 
-article.tweets-container:hover {
+article.tweet:hover {
   box-shadow: 5px 5px;
 }
 .tweets-header {
@@ -23,34 +23,8 @@ article.tweets-container:hover {
 }
  .user-name {
   display: flex;
-
 } 
-/* .tweets-header {
-  direction: row;
-  background-color:#f4f1ec;
-  background-image:none;
-  height:30px;
-  font-family:sans-serif;
-  font-size:20px;
-  margin-top: 5px;
-  margin-bottom:20px;
-  justify-content: space-between;
-  padding:5px;
-}
 
-.userpic {
-  height: 100%;
-  align-self:left;
-  
-}
-.user-name {
-  align-self:left;
-}
-
-.user-handle {
-  align-self:left;
-}
-*/
 .tweets-body {
   font-family:sans-serif;
   padding:.5em;
