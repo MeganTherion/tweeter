@@ -55,13 +55,13 @@
   <main>
 
   <section class="main-container">
+    <span class ="error" display="none">
+      <!-- <p id="warning">this is the warning</p> -->
+  </span>
     <section class="new-tweet">
     <!-- <h2>Compose Tweet</h2> -->
-     <form class="form">  <!--action="/tweets" method="POST"> -->
-
+    <form class="form" action="/tweets" method="POST">
       <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-
-
       <div class="bottom-stuff">
         <button id="tweetbutton" type="submit">Tweet</button>
 
@@ -69,8 +69,10 @@
         <output id="counter" name="counter" class="counter" for="tweet-text">140</output>
       </div>
     </form>
+    </section>
     <section id="tweets-container">
 
+    </section>
     </section>
   </main>
 </body>

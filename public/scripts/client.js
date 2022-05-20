@@ -4,7 +4,10 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
  
-//fetch tweets from /tweets
+
+
+$(document).ready(function() {
+  //fetch tweets from /tweets
 const loadTweets = function() {
   $.ajax('/tweets/', { method: 'GET' }) //make ajax get request to /tweets
   .then(data => {
@@ -12,24 +15,37 @@ const loadTweets = function() {
   })
   
 }
-
+//error template:
+// const warning = $(
+//   `<div class="error" style="display:none;">
+//     <strong>gotta tweet to tweet</strong>
+//     <p></p>
+//   </div>`
+// );
 //handle submissions
-const tweetform = $('.form')
+const $toolong = `<p id="warning">you gotta tweet to tweet</p>`
+const $tooshort = `<p id="warning">ok that's too much tweet</p>`
+const tweetform = $('.form');
+const errorMess = $('.error')
 const handleSubmit = function(event) {
   const tweetVal = $('#tweet-text').val();
+  
+  event.preventDefault();
   if (!tweetVal) {
-    alert("You gotta type to tweet")
+    errorMess.append($toolong);
+    errorMess.show();
+    
   }
   if (tweetVal.length > 140) {
-    alert("You tweeted too much")
-  }
-  event.preventDefault();
-  $.post('/tweets', tweetform.serialize())
-  //console.log(tweetform.serialize());
+    errorMess.append($tooshort);
+    errorMess.show();
+  } else {
+    $.post('/tweets', tweetform.serialize())
   .done(data => {
     $('#tweets-container').empty();
     loadTweets(data);
   })
+  }
 }
 
 //create tweets
@@ -79,8 +95,7 @@ const renderTweets = function(tweets) {
     $('#tweets-container').append(newTweetElement);
   }
 }
-
-$(document).ready(function() {
+//calls to action:
   loadTweets();
   tweetform.submit(handleSubmit);
   console.log('Hello from console! 👋');

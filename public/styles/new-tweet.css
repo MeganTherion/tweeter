@@ -8,6 +8,19 @@ main-container {
   /* padding:1.5em; */
 }
 
+.error {
+  display: none;
+  justify-content: space-around;
+  padding: .2em;
+  font-family:sans-serif;
+  color:tomato;
+  border: 3px solid red;
+  border-radius: 5px;
+  margin-top: .2em;
+  width:fit-content;
+  align-content:space-around;
+}
+
 .form {
 font-family:sans-serif;
 display: flex;
