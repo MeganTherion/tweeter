@@ -39,9 +39,16 @@ const createTweetElement = function(data) {
   const handle = data.user.handle;
   const tweetBody  = data.content.text;
   const tweetDate = data.created_at;
-  
-  
- const $tweet = `<article class="tweet">
+
+//escape function to prevent XSS:
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+//dat html
+  const $tweet = `<article class="tweet">
       <header class="tweets-header">
         <div class="user-name">
         <img class="userpic" src=${avatar}</img>
@@ -50,7 +57,7 @@ const createTweetElement = function(data) {
         <div class="user-handle">${handle}</div>
       </header>
       <div class="tweets-body">
-        ${tweetBody}
+        ${escape(tweetBody)}
       </div>
       <footer class="tweets-footer">
         <span id="tweet-date">${timeago.format(tweetDate)}</span>
