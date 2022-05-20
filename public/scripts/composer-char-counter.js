@@ -11,7 +11,6 @@ const handleTyping = function(event) {
   let numOfChars = (tweetText.val().length);
   let tweetBase = 140;
   counter.html(function(val) {
-   
         val = tweetBase-numOfChars;
         if (val < 0) counter.css('color', 'red');
         else counter.css('color', '#4056A1');

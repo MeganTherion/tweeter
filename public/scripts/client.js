@@ -24,8 +24,12 @@ const handleSubmit = function(event) {
     alert("You tweeted too much")
   }
   event.preventDefault();
-  $.post('/tweets', tweetform.serialize());
+  $.post('/tweets', tweetform.serialize())
   //console.log(tweetform.serialize());
+  .done(data => {
+    $('#tweets-container').empty();
+    loadTweets(data);
+  })
 }
 
 //create tweets
