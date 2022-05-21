@@ -49,6 +49,7 @@ const handleSubmit = function(event) {
     $.post('/tweets', tweetform.serialize())
   .done(data => {
     $('#tweets-container').empty();
+    tweetform[0].reset();
     loadTweets(data);
   })
   }
