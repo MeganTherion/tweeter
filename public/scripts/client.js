@@ -23,8 +23,8 @@ const loadTweets = function() {
 //   </div>`
 // );
 //handle submissions
-const $toolong = `<p id="warning">you gotta tweet to tweet</p>`
-const $tooshort = `<p id="warning">ok that's too much tweet</p>`
+const $tooshort = `<p id="warning">you gotta tweet to tweet</p>`
+const $toolong = `<p id="warning">ok that's too much tweet</p>`
 const tweetform = $('.form');
 const errorMess = $('.error')
 const handleSubmit = function(event) {
@@ -32,13 +32,19 @@ const handleSubmit = function(event) {
   
   event.preventDefault();
   if (!tweetVal) {
-    errorMess.append($toolong);
-    errorMess.show();
-    
-  }
-  if (tweetVal.length > 140) {
     errorMess.append($tooshort);
-    errorMess.show();
+    errorMess.slideDown()
+    tweetform.on('click', () => {
+      errorMess.slideUp();
+    });
+  }
+  else if (tweetVal.length > 140) {
+    errorMess.append($toolong);
+    errorMess.slideDown();
+    tweetform.on('keypress', () => {
+        errorMess.slideUp();
+    })
+   
   } else {
     $.post('/tweets', tweetform.serialize())
   .done(data => {
