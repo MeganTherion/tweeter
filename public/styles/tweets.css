@@ -3,7 +3,7 @@ article.tweet {
  display:flex;
  flex-direction: column;
  padding:.5em;
- border: 3px solid green;
+ border: 3px solid #3a3461;
  margin: .5em;
  
  
@@ -28,7 +28,7 @@ article.tweet:hover {
 .tweets-body {
   font-family:sans-serif;
   padding:.5em;
-  border-bottom: 3px solid green;
+  border-bottom: 3px solid rgb(226, 189, 45);
   font-size:30px;
   
 }
