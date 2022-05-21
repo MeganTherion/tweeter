@@ -33,16 +33,18 @@ const handleSubmit = function(event) {
   event.preventDefault();
   if (!tweetVal) {
     errorMess.append($tooshort);
-    errorMess.slideDown()
-    tweetform.on('click', () => {
+    errorMess.slideDown();
+    tweetform.keypress(function() {
       errorMess.slideUp();
-    });
+      errorMess.empty();
+    })
   }
   else if (tweetVal.length > 140) {
     errorMess.append($toolong);
     errorMess.slideDown();
-    tweetform.on('keypress', () => {
-        errorMess.slideUp();
+    tweetform.keypress(function() {
+      errorMess.slideUp();
+      errorMess.empty();
     })
    
   } else {
