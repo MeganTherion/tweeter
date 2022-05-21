@@ -22,11 +22,18 @@ const loadTweets = function() {
 //     <p></p>
 //   </div>`
 // );
+
+//event listener for button click on write tweet button
+const navTweet = $('.btn');
+const newTweet = $('.form');
+navTweet.click(() => {
+  newTweet.slideToggle();
+});
 //handle submissions
 const $tooshort = `<p id="warning">you gotta tweet to tweet</p>`
 const $toolong = `<p id="warning">ok that's too much tweet</p>`
 const tweetform = $('.form');
-const errorMess = $('.error')
+const errorMess = $('.error');
 const handleSubmit = function(event) {
   const tweetVal = $('#tweet-text').val();
   
@@ -34,7 +41,7 @@ const handleSubmit = function(event) {
   if (!tweetVal) {
     errorMess.append($tooshort);
     errorMess.slideDown();
-    tweetform.keypress(function() {
+    tweetform.keypress(() => {
       errorMess.slideUp();
       errorMess.empty();
     })

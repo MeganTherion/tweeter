@@ -12,11 +12,10 @@ nav {
   width:100%;
 
 }
-
 .a {
   display:flex;
   align-self:left;
-  font-size: 40px;
+  font-size: 45px;
   color: #f4f1ec;
   padding: 1.5em;
   
@@ -31,7 +30,7 @@ nav {
   /* align-self:flex-end; */
   color:#f4f1ec;
   font-family: Arial, Helvetica, sans-serif;
-  font-size:smaller;
+  font-size:35;
   width:fit-content;
   align-self: right;
   padding: 1.5em;
@@ -39,9 +38,16 @@ nav {
   
   /* background-color:#f4f1ec; */
 }
-.fa-solid.fa-angles-down {
+.btn:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.btn {
   display:flex;
   flex-direction: column;
   align-self: center;
   color:tomato;
-}
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  font-size: 1.5em;
+} 
