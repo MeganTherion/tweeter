@@ -19,4 +19,5 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Screenshot of tweeter"](https://github.com/MeganTherion/tweeter/blob/master/docs/Screenshot%202022-05-26%20at%203.46.38%20PM.png?raw=true)
+!["Screenshot of desktop view tweeter"](https://github.com/MeganTherion/tweeter/blob/master/docs/Screenshot%202022-05-26%20at%203.46.38%20PM.png?raw=true)
+!["Screenshot of mobile view tweeter"](https://github.com/MeganTherion/tweeter/blob/master/docs/Screenshot%202022-05-26%20at%203.55.54%20PM.png?raw=true)
