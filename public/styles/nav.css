@@ -6,7 +6,7 @@ nav {
   align-items: baseline;
   height: 120px;
   background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
-  background-color: #3a3461;
+  background-color: #4056A1;
   z-index:99;
   top:0;
   width:100%;
@@ -20,10 +20,11 @@ nav {
 
 .box-a > h1 {
   font-size: 55px;
-  color: rgb(226, 189, 45);
+  color: #FFFFFF;
   margin-bottom:.5em;
   margin-left:.5em;
 }
+
 
 .box-b {
   display:flex;
@@ -35,11 +36,8 @@ nav {
   width:fit-content;
   align-self: right;
   margin-bottom:.5em;
-  margin-right:2em;
-  
+  margin-right:.5em;
 
-  
-  /* background-color:#f4f1ec; */
 }
 .btn:hover{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
