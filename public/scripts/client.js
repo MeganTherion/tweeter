@@ -13,15 +13,7 @@ const loadTweets = function() {
   .then(data => {
     renderTweets(data);
   })
-  
 }
-//error template:
-// const warning = $(
-//   `<div class="error" style="display:none;">
-//     <strong>gotta tweet to tweet</strong>
-//     <p></p>
-//   </div>`
-// );
 
 //event listener for button click on write tweet button
 const navTweet = $('.btn');
@@ -36,7 +28,6 @@ const tweetform = $('.form');
 const errorMess = $('.error');
 const handleSubmit = function(event) {
   const tweetVal = $('#tweet-text').val();
-  
   event.preventDefault();
   if (!tweetVal) {
     errorMess.append($tooshort);

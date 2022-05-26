@@ -7,33 +7,36 @@ nav {
   height: 120px;
   background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
   background-color: #3a3461;
-  z-index:100;
+  z-index:99;
   top:0;
   width:100%;
-
 }
-.a {
+
+.box-a {
   display:flex;
-  align-self:left;
-  font-size: 50px;
-  color: rgb(226, 189, 45);
-  padding: 1.5em;
-  
-
-
-  
+  align-self:flex-start;
+  justify-content:start;
 }
 
-.b {
+.box-a > h1 {
+  font-size: 55px;
+  color: rgb(226, 189, 45);
+  margin-bottom:.5em;
+  margin-left:.5em;
+}
+
+.box-b {
   display:flex;
   flex-direction: column;
-  /* align-self:flex-end; */
+  align-self:end;
   color:#f4f1ec;
   font-family: Arial, Helvetica, sans-serif;
   font-size:35;
   width:fit-content;
   align-self: right;
-  padding: 1.5em;
+  margin-bottom:.5em;
+  margin-right:2em;
+  
 
   
   /* background-color:#f4f1ec; */

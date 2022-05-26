@@ -2,17 +2,37 @@ body > header {
   
   display:flex;
   flex-direction:column;
-  height:400px;
-  width:inherit;
-  justify-content:center;
+  /* height: 520px; */
+  justify-content:space-around;
   align-items:center;
   background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
   background-color: #3a3461;
-  margin-top:120px;
+  height:fit-content;
+  z-index: 1;
+  margin-top: 120px;
+  padding:.5em;
 }
 .name {
   color:rgb(227, 228, 223);
   display:flex;
   justify-content:center;
   align-content:center;
+}
+
+#userpic {
+  margin-top:1.5em;
+}
+
+/* desktop style */
+
+@media only screen and (min-width: 1420px) {
+  .main-header {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    width: 30%;
+    margin-top:9em;
+    margin-left:2em;
+    float:left;
+  }
 }

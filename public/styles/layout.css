@@ -16,29 +16,54 @@ html {
 
 body {
   display:flex;
+  justify-content: space-around;
   flex-direction:column;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Bungee', sans-serif;
+  
 }
-
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #4056A1;
+  font-family: sans-serif;
+  font-size: .5em;
+  padding:1em;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-tweet-container {
+#tweets-container {
   display:flex;
-  align-content: center;
+  flex-direction: column;
+  justify-content:space-around;
+  width:100%;
+  color:rgb(95, 90, 103);
+  
 }
-/* .p {
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  font-family:Arial, Helvetica, sans-serif;
+@media only screen and (min-width: 1420px) {
+  body {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  main {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 66.7%;
+    float:right;
+    margin-top:8em;
+    
+  }
+  
+  /* body > header {
+    margin-top: 140px;
+  } */
+}
 
-} */
-
-/* Style the links inside the navigation bar */
-
- 
 
