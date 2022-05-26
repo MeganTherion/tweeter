@@ -16,3 +16,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+!["Screenshot of tweeter"](https://github.com/MeganTherion/tweeter/blob/master/docs/Screenshot%202022-05-26%20at%203.46.38%20PM.png?raw=true)
