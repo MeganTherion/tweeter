@@ -19,5 +19,5 @@ const handleTyping = function(event) {
 }
 
 //add event handler to own element
-tweetText.keydown(handleTyping);
+tweetText.keyup(handleTyping);
 });

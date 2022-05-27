@@ -11,7 +11,18 @@ $(document).ready(function() {
 const loadTweets = function() {
   $.ajax('/tweets/', { method: 'GET' }) //make ajax get request to /tweets
   .then(data => {
+    console.log(data);
     renderTweets(data);
+    // let entries = Object.entries(data);
+    // let dataContainer = [];
+    // for (let entry of entries) {
+    //   dataContainer[0]=
+    //   if (data[entry].created_at < dataContainer[0].created_at) {
+    //     dataContainer[0] = entry;
+    //   } 
+    //   dataContainer.push(entry)
+    // }
+    // renderTweets(dataContainer);
   })
 }
 
@@ -63,14 +74,14 @@ const createTweetElement = function(data) {
   const tweetBody  = data.content.text;
   const tweetDate = data.created_at;
 
-//escape function to prevent XSS:
+  //escape function to prevent XSS:
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-//dat html
+  //dat html
   const $tweet = `<article class="tweet">
       <header class="tweets-header">
         <div class="user-name">
@@ -95,11 +106,19 @@ const createTweetElement = function(data) {
     return $tweet;
     
 };
-//render a new tweet
+//render a new tweet & reset counter
 const renderTweets = function(tweets) {
+  let counter = $('#counter');
+  let tweetsContainer = $('#tweets-container');
+  let tweetBase = 140;
   for (let tweet of tweets) {
     let newTweetElement = createTweetElement(tweet);
-    $('#tweets-container').append(newTweetElement);
+    tweetsContainer.prepend(newTweetElement);
+    //console.log(Object.entries(tweetsContainer))
+    counter.html(function(val) {
+      val = tweetBase;
+    return val
+})
   }
 }
 //calls to action:
