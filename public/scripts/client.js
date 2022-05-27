@@ -97,9 +97,9 @@ const createTweetElement = function(data) {
         <span id="tweet-date">${timeago.format(tweetDate)}</span>
         
         <div class ="icons">
-          <i class="fa-solid fa-retweet"></i>
-          <i class="fa-solid fa-flag"></i>
-          <i class="fa-solid fa-heart"></i>
+          <span id ="retweet"><i class="fa-solid fa-retweet"></i></span>
+          <span id="flag"<i class="fa-solid fa-flag"></i></span>
+          <span id=heart><i class="fa-solid fa-heart"></i></span>
         </div>
        </footer>
     </article>`
@@ -114,7 +114,6 @@ const renderTweets = function(tweets) {
   for (let tweet of tweets) {
     let newTweetElement = createTweetElement(tweet);
     tweetsContainer.prepend(newTweetElement);
-    //console.log(Object.entries(tweetsContainer))
     counter.html(function(val) {
       val = tweetBase;
     return val
@@ -125,5 +124,4 @@ const renderTweets = function(tweets) {
   loadTweets();
   tweetform.submit(handleSubmit);
   console.log('Hello from console! 👋');
- 
  });

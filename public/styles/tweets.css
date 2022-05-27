@@ -1,13 +1,10 @@
-
+/* mobile styles */
 article.tweet {
  display:flex;
  flex-direction: column;
  padding:.5em;
  border: 3px solid #3a3461;
  margin: .5em;
- 
- 
- 
 }
 
 article.tweet:hover {
@@ -37,5 +34,17 @@ article.tweet:hover {
   display:flex;
   justify-content: space-between;
   font-family:sans-serif;
+  font-size:15px;
   margin: .5em .5em;
 }  
+
+.icons > #retweet:hover {
+  color:rgb(226, 189, 45)
+}
+.icons > #flag:hover {
+  color:rgb(226, 189, 45)
+}
+.icons > #heart:hover {
+  color:rgb(226, 189, 45)
+}
+
