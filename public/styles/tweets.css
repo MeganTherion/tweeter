@@ -10,6 +10,7 @@ article.tweet {
 article.tweet:hover {
   box-shadow: 5px 5px;
 }
+
 .tweets-header {
   display: flex;
   justify-content: space-between;
@@ -18,6 +19,7 @@ article.tweet:hover {
   font-family: sans-serif;
   font-size:20px;
 }
+
  .user-name {
   display: flex;
 } 
@@ -27,7 +29,6 @@ article.tweet:hover {
   padding:.5em;
   border-bottom: 3px solid rgb(226, 189, 45);
   font-size:30px;
-  
 }
 
 .tweets-footer {
@@ -41,9 +42,11 @@ article.tweet:hover {
 .icons > #retweet:hover {
   color:rgb(226, 189, 45)
 }
+
 .icons > #flag:hover {
   color:rgb(226, 189, 45)
 }
+
 .icons > #heart:hover {
   color:rgb(226, 189, 45)
 }

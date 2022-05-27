@@ -2,10 +2,8 @@ body>header {
 
   display: flex;
   flex-direction: column;
-  /* height: 520px; */
   justify-content: space-around;
   align-items: center;
-  /* background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png"); */
   background-color: #3a3461;
   height: 400px;
   z-index: 1;
